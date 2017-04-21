@@ -30,8 +30,34 @@ def checkURself(pas):
     print ret
     return ret
 
+def rating(pas):
+    hiLetters = "QWERTYUIOPLKJHGFDSAZXCVBNM"
+    lowLetters = "qwertyuioplkjhgfdsazxcvbnm"
+    things = ". ? ! & # , ; : - _ *"
+    numbers = [str(i) for i in range(0,10)]
+    password = [pas[i] for i in range(len(pas))]
+    lo = [lowLetters[i] for i in range(len(lowLetters))]
+    hi = [hiLetters[i] for i in range(len(hiLetters))]
+    thing = [things[i] for i in range(len(things))]
+    val = 0
+    for i in password:
+        if(i in numbers):
+            val+=2
+        if(i in lo):
+            val+=1
+        if (i in hi):
+            val+=2
+        if(i in thing):
+            val+=3
+    print val
+    return val
 
     
-checkURself('baukdyu238r7')
-checkURself('baukdYu238r7')
-checkURself('bau')
+#checkURself('baukdyu238r7')
+#checkURself('baukdYu238r7')
+#checkURself('bau')
+
+rating('wuiegfweui239847JJGF')
+rating('ekjrgfukwergfurefger')
+rating('FJHJSDUIOD998')
+rating('bayle')
