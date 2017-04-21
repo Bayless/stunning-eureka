@@ -10,7 +10,9 @@ inclusion of these non-alphanumeric chars: . ? ! & # , ; : - _ *
 '''
 
 def checkURself(pas):
-    ret = False
+    ret1 = False
+    ret2 = False
+    ret3 = False
     hiLetters = "QWERTYUIOPLKJHGFDSAZXCVBNM"
     lowLetters = "qwertyuioplkjhgfdsazxcvbnm"
     numbers = [str(i) for i in range(0,10)]
@@ -19,14 +21,17 @@ def checkURself(pas):
     hi = [hiLetters[i] for i in range(len(hiLetters))]
     for i in password:
         if(i in numbers):
-            if(i in lo):
-                if (i in hi):
-            ret = True
-
+            ret1 = True
+        if(i in lo):
+            ret2 = True
+        if (i in hi):
+            ret3 = True
+    ret = ret1 and ret2 and ret3 
     print ret
-    print password
-    print numbers
+    return ret
 
+
+    
 checkURself('baukdyu238r7')
-
+checkURself('baukdYu238r7')
 checkURself('bau')
